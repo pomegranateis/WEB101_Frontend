@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        .textWhite {
+            color: white;
+        }
+        .textPurple {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">DOM Manipulation</h1>
+
+    <button id="redButton">Red Button</button>
+    <button id="blueButton">Blue Button</button>
+    <button id="whiteButton">White Button</button>
+    <button id="purpleButton">Purple Button</button>
+    <button id="surpriseButton">Surprise Me!</button>
+    <button id="dontSurpriseButton">Don't Surprise Me</button>
+    <p id="surpriseText" style="display: none;">Hah! You are surprised!</p>
+
+    <script>
+        console.log("Hello");
+
+        var redButton = document.getElementById('redButton');
+        var blueButton = document.getElementById('blueButton');
+        var whiteButton = document.getElementById('whiteButton');
+        var purpleButton = document.getElementById('purpleButton');
+        var header = document.getElementById('header');
+        var surpriseButton = document.getElementById('surpriseButton');
+        var dontSurpriseButton = document.getElementById('dontSurpriseButton');
+        var surpriseText = document.getElementById('surpriseText');
+
+        redButton.addEventListener('click', function() {
+            console.log('red button clicked');
+            document.body.style.backgroundColor = 'red';
+        });
+
+        blueButton.addEventListener('click', function() {
+            console.log('blue button clicked');
+            document.body.style.backgroundColor = 'blue'; 
+        });
+
+        whiteButton.addEventListener('click', function() {
+            console.log('white button clicked');
+            header.classList.remove('textPurple');
+            header.classList.add('textWhite');
+        });
+
+        purpleButton.addEventListener('click', function() {
+            console.log('purple button clicked');
+            header.classList.remove('textWhite');
+            header.classList.add('textPurple');
+        });
+
+        surpriseButton.addEventListener('click', function() {
+            surpriseText.style.display = 'block';
+        });
+
+        dontSurpriseButton.addEventListener('click', function() {
+            surpriseText.style.display = 'none'; 
+        });
+    </script>
+</body>
+</html>
